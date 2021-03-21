@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <title>Java Basic</title>
+    </head>
+    <body>
+       <div class="loan-cover">
+           <div class="loan-form">
+               <h1>Loan Calculator</h1>
+               <div class="loan-input">
+                    <form >
+                        <label for="loan-amount">$</label>
+                        <input type="number" id="loan-amount" placeholder="Loan Amount"><br>
+                        <label for="interest" >%</label>
+                        <input type="number" id="interest" placeholder="Interest Rate"><br>
+                    
+                        <input type="number" id="years" placeholder="Year To Pay Off">
+                        <button type="submit" value="Calculate">Calculate</button>
+                    </form>
+                    <div id="loading">
+                        <img src="../loading.svg" alt="">
+                      </div>
+               </div>
+            
+            <div class="loan-result">
+                <form >
+                    <label for="loan-amount-result">Monthly Payment</label>
+                    <input type="number" id="loan-amount-result" disabled ><br>
+                    <label for="interest-result" >Total Amount To Pay</label>
+                    <input type="number" id="interest-result" disabled><br>
+                    <label for="years-result">Total Interest</label>
+                    <input type="number" id="years-result" disabled>
+                   </form>
+            </div>
+             
+           </div>
+       </div>
+       <style>
+          body{
+              background-color: #a8a7ac;
+              background-size: cover;
+              height:100vh;
+              width:100%;
+          }
+          *:focus {
+                outline: none;
+            }
+            h1{
+                padding-top: 20px;
+                text-align: center;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 500;
+                font-size: 25px;
+                color: rgb(8, 115, 148);
+                text-transform: uppercase;
+            }
+          .loan-cover{
+            width:500px;
+            height:480px;
+            margin:200px auto;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          
+          }
+          .loan-form{
+              margin:10px auto;
+            
+              width:90%;
+          }
+          .loan-input ,.loan-result{
+              margin:20px auto;
+              width:90%;
+          }
+          .loan-result{
+              width :100%;
+          }
+          .loan-input{
+              padding-top:30px;
+          }
+          .loan-input label {
+          
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+          color: rgb(9, 153, 169);
+          background-color: rgb(247, 247, 247);
+          padding:5px 20px;
+          border-radius: 5px;
+          height: 30px;
+        
+          }
+          .loan-input input{
+            width:350px;
+            height:30px;
+            margin-left: -10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-style: none;
+            padding-left: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+          }
+          .loan-result label {
+          
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font-weight: 500;
+          font-size: 15px;
+          color: rgb(9, 153, 169);
+          background-color: rgb(247, 247, 247);
+          padding:5px 20px;
+          border-radius: 5px;
+          margin-left:30px;
+          height: 30px;
+     }
+        .loan-result input{
+            width:220px;
+            height:30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: -10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-style: none;
+            padding-left: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            border-left: 1px solid rgba(138, 133, 133, 0.678);
+            background-color: rgb(247, 247, 247);
+        }
+        #years {
+            margin-left: -4px;
+            width:400px;
+        }
+        #loan-amount{
+            margin-left: -10px;
+        }
+         button{
+                background-color: rgb(9, 153, 169);
+                border-style: none;
+                width:400px;
+                height:40px;
+                font-size: 15px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 500;
+                color: rgb(255, 254, 254);
+                margin-top: 20px;
+                margin-bottom: 10px;
+                margin-left:50%;
+                transform: translateX(-50%);
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 15px,
+                            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .loan-result{
+            background-color: rgb(9, 153, 169);
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                            rgba(0, 0, 0, 0.12) 0px -12px 10px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+         
+        #loading img{
+            width:100px;
+            height:100px;
+            margin-left:50%;
+            transform: translateX(-50%);
+
+        }
+        #loading, .loan-result {
+        display:none;
+      }
+      @media only screen and (max-width: 580px) {
+        .loan-cover{
+            width:90%;  
+            height:70%; 
+          }
+          h1{
+              padding-top: 50px;
+          }
+          button{
+              width:90%;
+          }
+          #years {
+         
+            width:98%;
+            margin-left:-1px;
+        }
+        #loan-amount{
+         
+            width:80%;
+        }
+        #interest{
+            width:80%;
+        }
+        #loan-amount-result{
+            width:100%;
+        }
+     
+        #loan-amount-result{
+            width:38%;
+            margin-left: -7px;
+        }
+        #years-result{
+            width:38%;
+            margin-left: -7px;
+        }
+        #interest-result{
+            width:33%;
+            margin-left: -7px;
+        }
+        .loan-result label{
+            margin-left:10px;
+        }
+    }
+       </style>
+        <script src="loan.js">
+        </script>
+        <script src="https://kit.fontawesome.com/3bebc7359f.js" crossorigin="anonymous"></script>
+    </body>
+</html>
